@@ -55,12 +55,32 @@ case $opcion in
 
 	3)
 	echo "Listado ordenado por padron"
-	
-	4) echo "Logica pendiente, buscar alumno...";;
-	5) echo "Logica pendiente, BUscar alumno...";;
-	6) echo "Cerrando sistema..."
-	   exit 0
-	   ;;
+	cat $HOME/EPNro1/procesado/*.txt | sort -n
+	;;
+
+	4)
+	echo "10 Notas mas altas"
+	cat $HOME/EPNro1/procesado/*.txt | sort -k5 -nr | head -n 10
+	;;
+
+	5)
+	echo "Buscar informacion por padron"
+	read -p "Ingresar el numero de padron a buscar: " padron_in
+	echo "Resultados para el padron: " $padron_in
+	grep -w "$padron_in" $HOME/EPNro1/procesado/*.txt
+
+	echo "=========================="
+	;;
+	6) 
+	echo "Cerrando sistema..."
+	if [[ "$1 == -d" ]]; then
+		echo "Parametro -d detectado"
+		rm -rf "$HOME/EPNro1"
+		pkill -f "consolidar.sh"
+	fi
+	exit 0
+	;;
+
 	*) "ERROR, Ingresar un numero del 1 al 6 "
 esac
 
