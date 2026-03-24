@@ -27,7 +27,16 @@ case $opcion in
 	 echo "Carpetas en $HOME/EPNro1 creadas con exito"
 	 ;;
 
-	2) echo "Logica pendiente, iniciar proceso en background...";;
+	2)
+	echo "Ejecuccion del consolidar.sh ..."
+	if [[-z "$FILENAME"]];; then
+		echo "ejecutar export FILENAME=Notas.tx"
+	else
+		bash "$HOME/EPNro1/consolidar.sh" &
+		echo "Proceso de background iniciado correctamente"
+	fi
+	;;
+
 	3) echo "Logica pendiente, ordenar padrones...";;
 	4) echo "Logica pendiente, buscar alumno...";;
 	5) echo "Logica pendiente, BUscar alumno...";;
