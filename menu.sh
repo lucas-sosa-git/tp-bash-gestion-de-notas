@@ -73,7 +73,7 @@ case $opcion in
 	;;
 	6) 
 	echo "Cerrando sistema..."
-	if [[ "$1 == -d" ]]; then
+	if [[ "$1" == "-d" ]]; then
 		echo "Parametro -d detectado"
 		rm -rf "$HOME/EPNro1"
 		pkill -f "consolidar.sh"
