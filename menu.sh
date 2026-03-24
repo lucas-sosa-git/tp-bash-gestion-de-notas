@@ -25,9 +25,9 @@ case $opcion in
             
             
     mkdir -p "$HOME/EPNro1/entrada"
-    echo -e "122332 Juan Lopez\njlopez@fi.uba.ar\n8" > "$HOME/EPNro1/entrada/alumno1.txt"
-    echo -e "77542 Franco Lomba\nflomba@fi.uba.ar\n10" > "$HOME/EPNro1/entrada/alumno2.txt"
-    echo -e "100223 Juana Pola\njpola@fi.uba.ar\n4" > "$HOME/EPNro1/entrada/alumno3.txt"
+    echo -e "122332 Juan Lopez jlopez@fi.uba.ar 8" > "$HOME/EPNro1/entrada/alumno1.txt"
+    echo -e "77542 Franco Lomba flomba@fi.uba.ar 10" > "$HOME/EPNro1/entrada/alumno2.txt"
+    echo -e "100223 Juana Pola jpola@fi.uba.ar 4" > "$HOME/EPNro1/entrada/alumno3.txt"
             
     echo "Debug completado: Script movido y 3 alumnos creados en 'entrada'."
     ;;
@@ -53,7 +53,9 @@ case $opcion in
 	fi
 	;;
 
-	3) echo "Logica pendiente, ordenar padrones...";;
+	3)
+	echo "Listado ordenado por padron"
+	
 	4) echo "Logica pendiente, buscar alumno...";;
 	5) echo "Logica pendiente, BUscar alumno...";;
 	6) echo "Cerrando sistema..."
