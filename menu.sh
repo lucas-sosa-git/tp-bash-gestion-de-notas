@@ -16,7 +16,17 @@ echo "=========================="
 read -p "Ingresar una opcion(1-6): " opcion
 
 case $opcion in
-	1) echo "Logica pendiente, crear entorno...";;
+	1)
+	 echo "-----"
+	 echo "Iniciando creacion del entorno..."
+		# estructura de archivos
+	 mkdir -p "$HOME/EPNro1/entrada"
+	 mkdir -p "$HOME/EPNro1/salida"
+	 mkdir -p "$HOME/EPNro1/procesado"
+
+	 echo "Carpetas en $HOME/EPNro1 creadas con exito"
+	 ;;
+
 	2) echo "Logica pendiente, iniciar proceso en background...";;
 	3) echo "Logica pendiente, ordenar padrones...";;
 	4) echo "Logica pendiente, buscar alumno...";;
